@@ -9,8 +9,6 @@ im1 = imread('1.jpeg');
 % top, bottom, left, right -- boundary of rectangular region (px)
 % first average the RGB values at each pixel to produce a luminance image
 
-% figure, imagesc, mean, std, double.
-
 top1 = 500;
 bottom1 = 900;
 left1 = 500;

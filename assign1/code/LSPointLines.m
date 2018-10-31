@@ -2,9 +2,8 @@ function [x] = LSPointLines(L)
     % L = [l1 l2 l3 ...] containing n lines in homogeneous format.
     % returns the point x (Euclidean) minimizing the sum of squared
     % distances to each line.
-    [r,n] = size(L);
     
-    %=======function start here ========================
+    [r,n] = size(L);
     
     % L (3 x n matrix);
     dn = L(3,:);        %ci

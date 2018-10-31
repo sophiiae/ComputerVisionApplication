@@ -9,7 +9,6 @@ outdoor = imread('outdoor2.jpg');
 od = im2double(outdoor);
 
 % imshow(indoor);
-% [x, y] = getpts;
 
 intop = 1000;
 inbottom = 2000;

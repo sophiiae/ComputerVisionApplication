@@ -22,6 +22,7 @@ function [wb] = whiteBalance(im,top, bottom, left, right)
     wb(:,:,1) = rc * r;
     wb(:,:,2) = gc * g;
     wb(:,:,3) = bc * b;
+    %% Plot the original image and white balanced image
     
     figure;
     subplot(1,2,1);

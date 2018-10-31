@@ -2,6 +2,7 @@ function [noise] = noiseAnalCrop(im, top, bottom, left, right)
     % im -- RGB image, 
     % top, bottom, left, right -- boundary of rectangular region (px)
     % first average the RGB values at each pixel to produce a luminance image
+    
     im = imcrop(im, [left top right bottom]);
     im = im2double(im);
 

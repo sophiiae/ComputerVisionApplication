@@ -12,7 +12,6 @@ ave2 = uint8(mean(im2, 3));
 % figure; imshow(ave2);
 
 diff = double(ave1) - double(ave2);
-% diff = ave1 - ave2;
 
 figure;imshow(diff,[]);
 figure;
