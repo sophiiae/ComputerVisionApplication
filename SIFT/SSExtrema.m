@@ -3,6 +3,8 @@ function [kp] = SSExtrema(DoGPyr)
 % Gaussian pyramid
 % kp - cell array of length noctaves containing the detected keypoints. 
 % each element is itself a cell array over the ns subband scales. 
-    kp = 0;
+    noctaves = length(DoGPyr);
+    kp = cell(noctaves, 1);
+     
 end
 
