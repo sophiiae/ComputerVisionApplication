@@ -17,4 +17,5 @@ noctaves = 3;
 pyr = GSS(im, s1, ns, noctaves);
 showPyr(pyr,ns);
 DoGPyr = DoGSS(pyr);
+showPyr(DoGPyr,ns);
 % kp = SSExtrema(DoGPyr);
