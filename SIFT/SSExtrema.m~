@@ -15,7 +15,7 @@ function [kp] = SSExtrema(DoGPyr)
             next = stack(:, :, sub+1);
             cur = stack(:, :, sub);
             
-            % create channels by shifting the image 8 times
+            % create channels 
             pre_shift = channel(pre);
             cur_shift = channel(cur);
             next_shift = channel(next);
@@ -31,7 +31,7 @@ function [kp] = SSExtrema(DoGPyr)
 end
 
 function ch = channel(im)
-% construct 8 channels for each pixel.
+% construct 26 channels for each pixel.
     [h w] = size(im);
     ch = zeros(h, w, 8);
     
