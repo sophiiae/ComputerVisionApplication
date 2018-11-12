@@ -15,37 +15,36 @@ function [GPyr] = GSS(im , s1, ns, noctaves)
     for oc = 1: noctaves
         [h, w] = size(base);
         stack = zeros(h, w, n);
+        
         % for each sub-octaves
         for sub = 1: n
-            sigma = s1;
-            if (sub > 1)
-                sigma = sigma * sqrt(k ^ 2 - 1);
-            end
-            base = gauss(base, sigma);
-            expand = padding(h, w, base);
-            stack(:,:,sub) = expand;
+            sigma = s1 * (k ^ (sub - 1));  % apply scale factor
+            blur = gauss(base, sigma);
+            expand = padding(h, w, blur);
+            stack(:,:,sub) = expand;  
         end
         GPyr(oc) = {stack};
-        base = imresize(stack(:,:,ns-1), 0.5, 'nearest');
+        
+        % down sampling by resize the blurred image with 2 * sigma
+        base = imresize(stack(:,:,ns + 1), 0.5, 'nearest');
     end
 
 end
 
 %% Apply Gaussian filter to the image
 function [blur] = gauss(im, sigma)
-    rmax = ceil(sqrt(2*sigma^2*log(100))); %truncate at 0.1%
+    rmax = ceil(sqrt(2*sigma^2*log(100))); %truncate at 1%
     x = [-rmax:rmax];
     h = exp(-x.^2/(2*sigma^2));
     h = h/sum(h(:)); %normalize to unit volume
     blur = conv2(h, h, im, 'valid');
 end
- 
+
 %% Add Padding to the extend the image to maintain the constant image size
 function [expand] = padding(h, w, blur)
-    expand = NaN(h,w);
     [bh, bw] = size(blur);
-    padh = (h - bh) / 2;
-    padw = (w - bw) / 2;
-    expand(padh+1:padh+bh, padw+1:padw+bw) = blur;
+    padh = floor((h - bh) / 2);
+    padw = floor((w - bw) / 2);
+   
+    expand = padarray(blur, [padh, padw], NaN);
 end
-
