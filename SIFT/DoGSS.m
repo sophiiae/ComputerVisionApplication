@@ -9,8 +9,9 @@ function [DoGPyr] = DoGSS(GPyr)
     for oc = 1: noctaves
         stack = GPyr{oc};
         [h, w, n] = size(stack);
-        Diff = diff(stack, 1, 3);
-        DoGPyr(oc) = {Diff};
+        DoG = zeros(h, w, n-1);
+        DoG(:,:,:) = diff(stack, 1, 3);
+        DoGPyr(oc) = {DoG};
     end
 end
 

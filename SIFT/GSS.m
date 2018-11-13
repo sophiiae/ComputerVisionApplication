@@ -10,9 +10,7 @@ function [GPyr] = GSS(im , s1, ns, noctaves)
     n = ns + 3;  % number of suboctave images
     k = 2 ^ (1 / ns); % scale factor
     GPyr = cell(noctaves, 1);
-    base = im;
-    sigma = s1; 
-    
+    base = im; 
     %% Loop 
     for oc = 1: noctaves
         [h, w] = size(base);
@@ -20,15 +18,15 @@ function [GPyr] = GSS(im , s1, ns, noctaves)
         
         % for each sub-octaves
         for sub = 1: n
-            if (sub == 2) 
-                sigma = s1 * sqrt(k ^ 2 - 1);
-            elseif (sub > 2) 
-                sigma = sigma * k;
+            if (sub == 1)
+                sigma = s1;
+            else
+                sigma = k^(sub-2) * sqrt(k^2-1) * s1;
             end
-            
             blur = gauss(base, sigma);
             expand = padding(h, w, blur);
             stack(:,:,sub) = expand;  
+            base = expand;
         end
         GPyr(oc) = {stack};
         
