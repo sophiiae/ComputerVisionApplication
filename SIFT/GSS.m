@@ -31,7 +31,7 @@ function [GPyr] = GSS(im , s1, ns, noctaves)
         GPyr(oc) = {stack};
         
         % down sampling by resize the blurred image with 2 * sigma
-        base = imresize(stack(:,:,ns + 1), 0.5, 'nearest');
+        base = imresize(stack(:,:,ns + 1), 0.5);
     end
 
 end

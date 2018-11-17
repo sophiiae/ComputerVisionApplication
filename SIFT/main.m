@@ -24,5 +24,5 @@ showPyr(DoGPyr,ns);
 
 % find keypoints
 kp = SSExtrema(DoGPyr);
-nkp = 20;
+nkp = 10;
 showKP(DoGPyr, ns, kp, nkp);
