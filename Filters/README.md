@@ -9,7 +9,7 @@ When the frequency distribution of the image energy and the noise energy differ,
 - The Wiener filter minimizes the expected mean square error (MSE) of the estimated image relative to the original image before noise was added.
 - It is the optimal linear shift-invariant solution to this problem
 - Note that this optimality is general - it does not depend upon either the noise or the image being Gaussian.
-<img src="pics/wienerstep.png" alt="wienerstep"  width="303" height="90" />
+<img src="pics/wienerstep.png" alt="wienerstep"  width="606" height="180" />
 
 #### Wiener Filter Example
 `freqdomain.m` constructs Wiener filter in frequency domain with Fourier transform through following steps. 
@@ -17,7 +17,7 @@ When the frequency distribution of the image energy and the noise energy differ,
 
 Assume isotropic spectral densities for both image and noise
 
-<img src="pics/wienerex.png" alt="wienerex"  width="350" height="150" />
+<img src="pics/wienerex.png" alt="wienerex"  width="560" height="240" />
 
 ![space](pics/cspace.png)
 ![freq](pics/cfreq.png)
