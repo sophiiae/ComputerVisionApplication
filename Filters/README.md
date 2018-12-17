@@ -13,11 +13,11 @@ When the frequency distribution of the image energy and the noise energy differ,
 
 #### Wiener Filter Example
 `freqdomain.m` constructs Wiener filter in frequency domain with Fourier transform through following steps. 
-`spacedomain.m` get the inverse Hankel transform of $H(\omega)$ by taking the inverse Fourier transform of $H({\omega}_{x},{\omega}_{y})$
+`spacedomain.m` get the inverse Hankel transform of H by taking the inverse Fourier transform
 
 Assume isotropic spectral densities for both image and noise
+
 <img src="pics/wienerex.png" alt="wienerex"  width="350" height="150" />
-![wienerexample](pics/wienerex.png)
 
 ![space](pics/cspace.png)
 ![freq](pics/cfreq.png)
