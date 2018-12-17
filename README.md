@@ -1,8 +1,10 @@
 # Computer Vision Application
 
+**Detailed explaination inside corresponding folder.**
+
 This project consists of four small applications in computer vision. 
 
-All the applications are written in MATLAB. Detailed explaination inside corresponding folder.
+All the applications are written in MATLAB. 
 
 - `Filters` compares efficiency of Wiener filters in frequency domain and spatial domain with a photo under low light conditions, and also compares Wiener filter and Gaussian filter for denoising and apply bilateral filter to improve results
 - `GeoCalibration` performs camera calibration with checkerboard and estimates extrinsic camera parameters with given intrinsic parameters and 6 pairs of points
