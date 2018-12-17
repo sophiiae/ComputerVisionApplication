@@ -3,13 +3,14 @@ function [ out, H, MSE ] = freqdomain( im, noisy, b )
     [h, w] = size(noisy);
     [wx, wy] = freqspace([h w],'meshgrid');
 
-%     cx = ceil(h / 2);
-%     cy = ceil(w / 2) + 1;
-%     [X, Y] = meshgrid(1:w,1:h);
-%     wx = X - cy;
-%     wy = Y - cx; 
-%     wx = wx ./ max(wx(:));
-%     wy = wy ./ max(wy(:));
+    %construct Wiener filter in frequency domain
+    cx = ceil(h / 2);
+    cy = ceil(w / 2) + 1;
+    [X, Y] = meshgrid(1:w,1:h);
+    wx = X - cy;
+    wy = Y - cx; 
+    wx = wx ./ max(wx(:));
+    wy = wy ./ max(wy(:));
 
     k = 1 + (((wx .^ 2) + (wy .^ 2)) .* (pi ^ 2)) ./ (b ^2);
     H = 1 ./ k;     % H(wx, wy)
