@@ -9,5 +9,6 @@
 
 ##### Image Input: 
 <img src="images/LSB.jpg" alt="LSB"  width="982" height="652" /> 
+
 ##### Image Output: 
 <img src="images/optimized.jpg" alt="opt" width="982" height="652" /> 
