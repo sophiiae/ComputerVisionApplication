@@ -7,9 +7,7 @@
    - Use information to determine the extrinsic parameters (3D rotation and translation) of the camera.
    - Estimate the uncertainty in these parameters by bootstraping. 
 
-###### Image Input: 
-<img src="images/LSB.jpg" alt="LSB"  width="982" height="652" /> <br/>
-###### Image Output: 
-<img src="images/optimized.jpg" alt="opt" width="982" height="652" /> <br/>
-
-
+##### Image Input: 
+<img src="images/LSB.jpg" alt="LSB"  width="982" height="652" /> 
+##### Image Output: 
+<img src="images/optimized.jpg" alt="opt" width="982" height="652" /> 

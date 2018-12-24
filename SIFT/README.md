@@ -7,7 +7,7 @@ The front-end implementation of David Lowe's [Scale Invariant Feature Transform 
 
 <img src="pics/test.jpg" alt="origin"  width="228" height="235" />
 
-#### Gaussian Scale Space
+## Gaussian Scale Space
 `GSS.m` creates a Gaussian pyramid representation of a greyscale image. 
 
 `GPyr = GSS(im, s1, ns, noctaves)`
@@ -22,7 +22,7 @@ computation of ns + 2 DoG images, and thus detection of DoG extrema at ns subban
 *---Output:* 
 ![showPyr](pics/showPyr.jpg)
 
-#### Difference of Gaussian Scale Space
+## Difference of Gaussian Scale Space
 `DoGSS.m` uses GSS to create a Difference of Gaussian pyramid representation of an image.
 
 `DoGPyr = DoGSS(GPyr)`
@@ -33,7 +33,7 @@ computation of ns + 2 DoG images, and thus detection of DoG extrema at ns subban
 *---Output:* 
 ![showDoGPyr](pics/showDoGPyr.jpg)
 
-#### Keypoint Detection
+## Keypoint Detection
 `SSExtrema.m` finds all of the keypoints (scalespace extrema) in a Difference of Gaussian pyramid.
 
 `kp = SSExtrema(DoGPyr)`
