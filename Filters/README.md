@@ -1,6 +1,6 @@
 # Filters
-- `Q1` generates results of applying *Wiener filter* in both frequency domain and spatial domain for the given image under low light condition and beta value. 
-- `Q2Q3` compares *Wiener filter* and *Gaussian filter* for noisy image, calculates the MSE and use MATLAB build-in Bilateral filter to minimize the MSE. 
+- `wiener.m` generates results of applying *Wiener filter* in both frequency domain and spatial domain for the given image under low light condition and beta value. 
+- `denoisy.m` compares *Wiener filter* and *Gaussian filter* for noisy image, calculates the MSE and use MATLAB build-in Bilateral filter to minimize the MSE. 
 
 ## Wiener Filter in Spatial and Frequency Domain
 When the frequency distribution of the image energy and the noise energy differ, we can improve the signal-to-noise ratio (SNR) by boosting the Fourier amplitudes where the image is strong relative to the noise and attenuating the Fourier amplitudes where it is relatively weak.
